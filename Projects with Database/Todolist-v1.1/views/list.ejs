@@ -1,0 +1,113 @@
+<%-include("partials/header")-%>
+
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+    </div>
+
+    <div class="box">
+
+        <!-- <li>Buy Food</li>
+        <li>Cook Food</li>
+        <li>Eat Food</li> -->
+        <!-- <li> <%= newListItems %> </li> -->
+
+        <!-- <% for(let i=0; i<newListItems.length; i++){ %>
+            <div class="item">
+                <input type="checkbox" name="" id="">
+                <p>
+                    <%= newListItems[i].name %>
+                </p>
+            </div>
+        <% } %> -->
+
+        <% newListItems.forEach(element => { %>
+            <form action="/delete" method="post">
+                <div class="item"> 
+                    <input type="hidden" name="itemId" value="<%= element._id %>">
+                    <input type="checkbox" name="checkbox" id="<%= element._id %>" onchange="this.form.submit()">
+                    
+                    <!-- The hidden input field <input type="hidden" name="itemId" value="<%= element._id %>"> is used to send additional data
+                    along with the form submission. In this case, it's used to include the ID of the item that you want to delete.
+                    
+                    When the user checks the checkbox and the form is submitted, the server receives the form data. The value of itemId can
+                    be accessed on the server side to determine which item needs to be deleted. By including this hidden field, you're
+                    providing a way to associate the checkbox with a specific item in your server-side logic.
+
+                    The hidden input allows you to include data that the user doesn't see or interact with directly but 
+                    is crucial for your application's functionality. -->
+                    <p>
+                        <%= element.name %>
+                    </p>
+                </div>
+            </form>
+        <% }) %>
+
+    <!-- <form action="/" method="post">
+        <label for="newItem">New Item:</label>
+        <input type="text" id="newItem" name="newItem" required>
+
+        <label for="list">List:</label>
+        <select id="list" name="list">
+            <option value="Default List">Default List</option>
+            <option value="Work List">Work List</option>
+        </select> -->
+
+
+        <!-- <form class="item" id="addItemForm"  method="post">
+            <button type="button" onclick="addToTodayList()">+</button>
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required > -->
+            <!-- <button type="submit" name="button">+</button> previously commented-->
+        
+            <!-- <button type="button" onclick="addToWorkList()">++</button> -->
+
+            <!-- <button type="submit" name="list" value="<%=listTitle%>">+</button> previously commented-->
+        <!-- </form>  -->
+
+
+
+        <form class="item" id="addItemForm" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required>
+            <!-- <button type="submit" onclick="addToList()">+</button> -->
+            <button type="submit">+</button>
+        </form>
+        
+    </div>
+
+<%-include("partials/footer")-%>
+
+<!-- <script>
+    function addToTodayList() {
+        document.getElementById("addItemForm").action = "/";
+        document.getElementById("addItemForm").submit();
+    }
+
+    function addToWorkList() {
+        document.getElementById("addItemForm").action = "/work";
+        document.getElementById("addItemForm").submit();
+    }
+</script> -->
+
+
+<script>
+    const button = document.querySelector("#addItemForm button");  // Get the button element
+    button.addEventListener("click", addToList);  // Use addEventListener
+    
+    function addToList() {
+        // Determine the appropriate route based on the list context
+        const listName = listTitle; // Get the list title from the EJS context
+        let actionRoute;
+        if (listName ==="getDate()") {
+            actionRoute = "/";
+        } else if (listName === "Work List") {
+            actionRoute = "/work";
+        } else if (listName === `${listName}`) {
+            actionRoute = `/lists/${listName}`;
+        }
+        
+
+        document.getElementById("addItemForm").action = actionRoute;
+        document.getElementById("addItemForm").submit();
+    }
+</script>

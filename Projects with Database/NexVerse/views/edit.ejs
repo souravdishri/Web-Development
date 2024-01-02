@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+
+    <div class="page-content">
+        <div class="blog-edit-container">
+            <h1>Edit Post</h1>
+            <form action="/edit/<%= post._id %>" method="post">
+                <div class="form-group">
+                    <label for="updatedTitle">Updated Title</label>
+                    <input type="text" name="updatedTitle" class="form-control" id="updatedTitle"
+                        value="<%= post.title %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="updatedPost">Updated Post</label>
+                    <textarea name="updatedPost" class="form-control" id="updatedPost" rows="7"
+                        required><%= post.post %></textarea>
+                </div>
+                <button type="submit" class="btn">Update Post</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include("partials/footer"); -%>

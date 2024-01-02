@@ -1,0 +1,249 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Styles */
+.site-header {
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* .logo-link:hover {
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+} */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+}
+
+/* Footer Styles */
+.site-footer {
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+/* About Page Styles */
+.about-content {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Compose Page Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.blog-compose-container {
+text-align:justify;
+}
+
+.blog-compose-container h1 { 
+    /* The color property is meant for specifying the text color,
+    and it doesn't accept gradients. If you want to apply a linear gradient to the text, 
+    you should use the background property instead.
+     */
+    /* color: #2196f3; */
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+/*Edit Page Styles*/
+.blog-edit-container {
+text-align: justify;
+}
+
+.blog-edit-container h1 {
+    /* color: #2196f3; */
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #4caf50, #2196f3);
+    /* Change the background on hover */
+    transform: scale(1.05);
+    /* Add a slight scale effect on hover */
+}
+
+/* Contact Page Styles */
+.contact-content {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Edit Page Styles */
+.inline-link {
+    text-decoration: none;
+    color: #2196f3;
+    transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+    color: linear-gradient(135deg, #4caf50, #2196f3);
+    /* Change the color on hover */
+}
+
+/* Page Content Styles */
+.page-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+/* Hover Effect for Links */
+.inline-link:hover,
+.nav-link:hover {
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Adjusted from flex-end to flex-start */
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+}
+
+.separator {
+    height: 25px;
+    /* Adjust spacing between buttons as needed */
+}
+
+.post-actions { 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Post Action Links */
+.post-action-link {
+    text-decoration: none;
+    margin-right: 3px;
+}
+
+/* Edit Link */
+.edit-link svg {
+    fill: blue;
+}
+
+/* Delete Link */
+.delete-link svg {
+    fill: red;
+}
+
+/* Post Title */
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Post Content */
+.post-content {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Visually Hidden */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    visibility: hidden;
+    display: none;
+}
